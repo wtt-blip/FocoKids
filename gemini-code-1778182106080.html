@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FocoKids | ODS 4 - Educação Divertida</title>
+    
+    <style>
+        :root {
+            --primary: #3498db;    /* Azul Foco */
+            --secondary: #2ecc71;  /* Verde ODS 4 */
+            --accent: #f1c40f;     /* Amarelo Alegria */
+            --danger: #e74c3c;     /* Vermelho Erro */
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Comic Sans MS', sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow-x: hidden;
+        }
+
+        /* Navegação Superior */
+        nav {
+            background: var(--white);
+            width: 100%;
+            padding: 15px 0;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav button {
+            border: 2px solid var(--primary);
+            background: transparent;
+            color: var(--primary);
+            padding: 12px 25px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 1rem;
+            transition: 0.3s;
+        }
+
+        nav button.active {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        /* Header Curvado */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--white);
+            width: 100%;
+            padding: 60px 0 80px 0;
+            text-align: center;
+            border-bottom-left-radius: 80px;
+            border-bottom-right-radius: 80px;
+        }
+
+        header h1 { margin: 0; font-size: 3rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.2); }
+
+        /* Conteúdo Principal */
+        main {
+            max-width: 800px;
+            width: 90%;
+            margin: -40px auto 50px auto;
+        }
+
+        .card {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 30px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            text-align: center;
+            display: none;
+            animation: popIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .card.show { display: block; }
+
+        @keyframes popIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        /* Vídeo */
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            border-radius: 20px;
+            overflow: hidden;
+            margin: 25px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .video-wrapper iframe {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+        }
+
+        /* Botões Kids */
+        .btn-game {
+            background: var(--secondary);
+            color: var(--white);
+            border: none;
+            padding: 20px 40px;
+            font-size: 1.3rem;
+            border-radius: 20px;
+            cursor: pointer;
+            margin: 10px;
+            box-shadow: 0 6px 0 #1e8449;
+            transition: 0.1s;
+        }
+
+        .btn-game:active {
+            transform: translateY(4px);
+            box-shadow: 0 2px 0 #1e8449;
+        }
+
+        .btn-wrong { background: var(--danger); box-shadow: 0 6px 0 #c0392b; }
+
+        #msg {
+            margin-top: 25px;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        footer { padding: 30px; color: #95a5a6; font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <button id="nav-inicio" class="active" onclick="mudarAba('inicio')">🏠 Início</button>
+        <button id="nav-videos" onclick="mudarAba('videos')">🎬 Vídeos</button>
+        <button id="nav-desafio" onclick="mudarAba('desafio')">🎮 Desafio</button>
+    </nav>
+
+    <header>
+        <h1>FocoKids 🚀</h1>
+        <p>Aprender, Brincar e Crescer juntos!</p>
+    </header>
+
+    <main>
+        <section id="inicio" class="card show">
+            <h2>Olá, Amigo(a)! 👋</h2>
+            <p>Este é o <strong>FocoKids</strong>. Aqui você encontra vídeos e jogos pensados especialmente para você aprender com calma e muita diversão!</p>
+            <p>Nosso projeto apoia a <strong>ODS 4</strong>, que quer levar escola de qualidade para todas as crianças do planeta.</p>
+        </section>
+
+        <section id="videos" class="card">
+            <h2>Vídeos Legais 📺</h2>
+            <p>Assista esse vídeo curto para aprender coisas novas!</p>
+            <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/S_oH-uU93tA" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <p><strong>Dica de Foco:</strong> Tente assistir sem pausar e depois desenhe o que você mais gostou!</p>
+        </section>
+
+        <section id="desafio" class="card">
+            <h2>Desafio do Saber 🏆</h2>
+            <p>Qual cor representa a Educação no nosso site?</p>
+            <div>
+                <button class="btn-game" onclick="resposta(true)">Verde e Azul 🌈</button>
+                <button class="btn-game btn-wrong" onclick="resposta(false)">Cinza Escuro 🌑</button>
+            </div>
+            <div id="msg"></div>
+        </section>
+    </main>
+
+    <footer>
+        &copy; 2026 FocoKids | Um projeto pela Educação de Qualidade (ODS 4)
+    </footer>
+
+    <script>
+        function mudarAba(id) {
+            // Esconder todos os cards e desativar botões
+            document.querySelectorAll('.card').forEach(c => c.classList.remove('show'));
+            document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
+            
+            // Mostrar a aba clicada e ativar o botão
+            document.getElementById(id).classList.add('show');
+            document.getElementById('nav-' + id).classList.add('active');
+        }
+
+        function resposta(correto) {
+            const msg = document.getElementById('msg');
+            if(correto) {
+                msg.innerHTML = "🌟 EXCELENTE! Você tem olhos de águia! 🦅";
+                msg.style.color = "var(--secondary)";
+            } else {
+                msg.innerHTML = "Quase lá! Tente de novo, o FocoKids é cheio de cores! 🎨";
+                msg.style.color = "var(--danger)";
+            }
+        }
+    </script>
+</body>
+</html>
