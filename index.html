@@ -166,15 +166,20 @@
             <p><strong>Dica de Foco:</strong> Tente assistir sem pausar e depois desenhe o que você mais gostou!</p>
         </section>
 
-        <section id="desafio" class="card">
-            <h2>Desafio do Saber 🏆</h2>
-            <p>Qual cor representa a Educação no nosso site?</p>
-            <div>
-                <button class="btn-game" onclick="resposta(true)">Verde e Azul 🌈</button>
-                <button class="btn-game btn-wrong" onclick="resposta(false)">Cinza Escuro 🌑</button>
+     <section id="desafio" class="card">
+    <h2>Desafio do Saber 🏆</h2>
+    
+    <div id="jogo-container">
+        <p id="pergunta-texto" style="font-size: 1.3rem; font-weight: bold;">Carregando desafio...</p>
+        
+        <div id="opcoes-botoes">
             </div>
-            <div id="msg"></div>
-        </section>
+    </div>
+
+    <div id="msg"></div>
+    
+    <button id="btn-proximo" class="btn-game" style="display:none; background-color: var(--primary); margin-top: 20px;" onclick="proximaPergunta()">Próximo Desafio! ➡️</button>
+</section>  
     </main>
 
     <footer>
