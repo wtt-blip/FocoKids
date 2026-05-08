@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FocoKids | ODS 4 - Educação Divertida</title>
+    <title>FocoKids | ODS 4 - Sua Aventura!</title>
     
     <style>
         :root {
@@ -81,7 +81,6 @@
 
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
-        /* Estilo dos Vídeos */
         .video-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -118,7 +117,6 @@
             font-size: 0.9rem;
         }
 
-        /* Estilo dos Desafios */
         .btn-game {
             background: var(--secondary);
             color: var(--white);
@@ -149,36 +147,37 @@
 
     <header>
         <h1>FocoKids 🚀</h1>
-        <p>Aprender com foco é super divertido!</p>
+        <p>Sua mente, sua maior aventura!</p>
     </header>
 
     <main>
         <section id="inicio" class="card show">
-            <h2>Olá, Explorador! 👋</h2>
-            <p>Bem-vindo ao <strong>FocoKids</strong>. Criamos este site para ajudar crianças a aprender sobre a <strong>ODS 4 (Educação de Qualidade)</strong> com vídeos divertidos e dicas de foco!</p>
+            <h2>Ei, você sabia que sua mente brilha? ✨</h2>
+            <p>No <strong>FocoKids</strong>, aprender é o seu superpoder! 🚀</p>
+            <p>Criamos este lugar especial para você descobrir o mundo da <strong>ODS 4</strong> de um jeito divertido, colorido e no seu tempo. Escolha uma missão no menu acima e vamos nessa!</p>
         </section>
 
         <section id="videos" class="card">
             <h2>Canto do Vídeo 📺</h2>
             <div class="video-grid">
                 <div class="video-item">
-                    <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/17kR6keWyJQ?si=zHJZ9xDFYdYtq6bw" frameborder="0" allowfullscreen></iframe></div>
+                    <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/YUVXYF9MZok?si=dw1z1b7wlL2Fjlnx" frameborder="0" allowfullscreen></iframe></div>
                     <div class="foco-dica">🧠 Dica 1: Respire fundo antes de começar!</div>
                 </div>
                 <div class="video-item">
-                    <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/KAh9JQQkNm0?si=7DcSzlX16Uzy9rd2" frameborder="0" allowfullscreen></iframe></div>
+                    <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/nJV4JFWbVg8?si=kiLn0Efu4W_5wQZ9" frameborder="0" allowfullscreen></iframe></div>
                     <div class="foco-dica">🎧 Dica 2: Use fones para não se distrair.</div>
                 </div>
                 <div class="video-item">
-                    <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/C-Z1Wc5FBMY?si=cJixjDbgniToFwkQ" frameborder="0" allowfullscreen></iframe></div>
+                    <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/C-Z1Wc5FBMY?si=yK0tNUTSWQV-Tw1m" frameborder="0" allowfullscreen></iframe></div>
                     <div class="foco-dica">🪑 Dica 3: Sente-se em um lugar calmo.</div>
                 </div>
                 <div class="video-item">
-                    <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/nJV4JFWbVg8?si=tm6lomXukzG8qClY" frameborder="0" allowfullscreen></iframe></div>
+                    <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/17kR6keWyJQ?si=sS2yinVJMJDZwg16" frameborder="0" allowfullscreen></iframe></div>
                     <div class="foco-dica">🚫 Dica 4: Deixe o celular de lado agora.</div>
                 </div>
                 <div class="video-item">
-                    <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/YUVXYF9MZok?si=yJob1_qwm43Z9smZ" frameborder="0" allowfullscreen></iframe></div>
+                    <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/KAh9JQQkNm0?si=ZjRnONnaCIyvjlLQ" frameborder="0" allowfullscreen></iframe></div>
                     <div class="foco-dica">💧 Dica 5: Beba água após aprender algo novo!</div>
                 </div>
             </div>
@@ -208,14 +207,14 @@
             { p: "1. A ODS 4 diz que a educação deve ser...", o: [{t:"Para todos!", c:true}, {t:"Só para adultos", c:false}] },
             { p: "2. O que ajuda no foco?", o: [{t:"Um lugar calmo", c:true}, {t:"Muita bagunça", c:false}] },
             { p: "3. Aprender coisas novas é...", o: [{t:"Uma aventura!", c:true}, {t:"Perda de tempo", c:false}] },
-            { p: "4. Onde podemos aprender?", o: [{t:"Em qualquer lugar!", c:true}, {t:"Só na Lua", c:false}] }
+            { p: "4. Estudar é como uma...", o: [{t:"Grande missão espacial!", c:true}, {t:"Chatice total", c:false}] }
         ];
 
         let atual = 0;
 
         function carregarPergunta() {
             if (atual >= desafios.length) {
-                document.getElementById('jogo-container').innerHTML = "<h2>🎉 VOCÊ VENCEU! 🎉</h2>";
+                document.getElementById('jogo-container').innerHTML = "<h2>🎉 VOCÊ É UM SUPER MESTRE! 🎉</h2><p>Missão cumprida com sucesso!</p>";
                 document.getElementById('btn-proximo').style.display = "none";
                 return;
             }
@@ -232,11 +231,11 @@
                 b.className = "btn-game " + (opcao.c ? "" : "btn-wrong");
                 b.onclick = () => {
                     if(opcao.c) {
-                        document.getElementById('msg').innerText = "🌟 Acertou!";
+                        document.getElementById('msg').innerText = "🌟 Sensacional! Você acertou!";
                         document.getElementById('msg').style.color = "var(--secondary)";
                         document.getElementById('btn-proximo').style.display = "block";
                     } else {
-                        document.getElementById('msg').innerText = "Tente de novo! 💪";
+                        document.getElementById('msg').innerText = "Tente de novo! 💪 Você consegue!";
                         document.getElementById('msg').style.color = "var(--danger)";
                     }
                 };
