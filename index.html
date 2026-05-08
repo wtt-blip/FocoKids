@@ -23,7 +23,6 @@
             align-items: center;
         }
 
-        /* Menu */
         nav {
             background: var(--white);
             width: 100%;
@@ -46,7 +45,6 @@
             cursor: pointer;
             font-weight: bold;
             transition: 0.3s;
-            font-size: 0.9rem;
         }
 
         nav button.active {
@@ -77,21 +75,17 @@
             box-shadow: 0 15px 35px rgba(0,0,0,0.1);
             text-align: center;
             display: none;
-            animation: fadeIn 0.4s ease;
         }
 
-        .card.show { display: block; }
+        .card.show { display: block; animation: fadeIn 0.4s ease; }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
-        /* Grade de Vídeos */
+        /* Estilo dos Vídeos */
         .video-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
+            gap: 20px;
             margin-top: 20px;
         }
 
@@ -99,7 +93,6 @@
             background: #fff;
             border-radius: 20px;
             padding: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
             border: 2px solid #eee;
         }
 
@@ -109,7 +102,6 @@
             height: 0;
             border-radius: 15px;
             overflow: hidden;
-            background: #000;
         }
 
         .video-wrapper iframe {
@@ -121,12 +113,12 @@
             color: #2980b9;
             padding: 10px;
             border-radius: 10px;
-            font-size: 0.9rem;
             margin-top: 10px;
             font-weight: bold;
+            font-size: 0.9rem;
         }
 
-        /* Botões Jogo */
+        /* Estilo dos Desafios */
         .btn-game {
             background: var(--secondary);
             color: var(--white);
@@ -138,15 +130,13 @@
             width: 100%;
             max-width: 350px;
             margin: 10px auto;
-            box-shadow: 0 5px 0 #1e8449;
             display: block;
+            box-shadow: 0 5px 0 #1e8449;
         }
 
         .btn-wrong { background: var(--primary); box-shadow: 0 5px 0 #2980b9; }
 
         #msg { margin-top: 20px; font-size: 1.3rem; font-weight: bold; }
-
-        footer { padding: 30px; color: #95a5a6; font-size: 0.8rem; text-align: center; }
     </style>
 </head>
 <body>
@@ -165,75 +155,35 @@
     <main>
         <section id="inicio" class="card show">
             <h2>Olá, Explorador! 👋</h2>
-            <p>O <strong>FocoKids</strong> foi criado para ajudar você a aprender sobre a <strong>ODS 4</strong> (Educação de Qualidade) de um jeito que respeita o seu tempo e o seu foco.</p>
-            <p>Aqui você encontra vídeos com dicas especiais e desafios para treinar seu cérebro!</p>
+            <p>Bem-vindo ao <strong>FocoKids</strong>. Criamos este site para ajudar crianças a aprender sobre a <strong>ODS 4 (Educação de Qualidade)</strong> com vídeos divertidos e dicas de foco!</p>
+        </section>
+
         <section id="videos" class="card">
-    <h2>Canto do Vídeo 📺</h2>
-    <p>Assista e siga as dicas de foco!</p>
-    <div class="video-grid">
-        
-        <div class="video-item">
-            <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/17kR6keWyJQ?si=1GyPaNmlZItW5W6n" 
-                        title="YouTube video player" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                        allowfullscreen>
-                </iframe>
+            <h2>Canto do Vídeo 📺</h2>
+            <div class="video-grid">
+                <div class="video-item">
+                    <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/S_oH-uU93tA" frameborder="0" allowfullscreen></iframe></div>
+                    <div class="foco-dica">🧠 Dica 1: Respire fundo antes de começar!</div>
+                </div>
+                <div class="video-item">
+                    <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/P7m_01pni_M" frameborder="0" allowfullscreen></iframe></div>
+                    <div class="foco-dica">🎧 Dica 2: Use fones para não se distrair.</div>
+                </div>
+                <div class="video-item">
+                    <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe></div>
+                    <div class="foco-dica">🪑 Dica 3: Sente-se em um lugar calmo.</div>
+                </div>
+                <div class="video-item">
+                    <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/7_m1XvY7v9c" frameborder="0" allowfullscreen></iframe></div>
+                    <div class="foco-dica">🚫 Dica 4: Deixe o celular de lado agora.</div>
+                </div>
+                <div class="video-item">
+                    <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/hHSh3E4UbeU" frameborder="0" allowfullscreen></iframe></div>
+                    <div class="foco-dica">💧 Dica 5: Beba água após aprender algo novo!</div>
+                </div>
             </div>
-            <div class="foco-dica">🧠 Dica 1: Antes de dar o play, respire fundo 3 vezes!</div>
-        </div>
+        </section>
 
-        <div class="video-item">
-            <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/WpkCXc5TNnc?si=SGa48b6T2OFTeGEI" 
-                        title="YouTube video player" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                        allowfullscreen>
-                </iframe>
-            </div>
-            <div class="foco-dica">🎧 Dica 2: Use fones para ouvir melhor os sons.</div>
-        </div>
-
-        <div class="video-item">
-            <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/nJV4JFWbVg8?si=Lhvsp4Dr4IVhjxU7" 
-                        title="YouTube video player" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                        allowfullscreen>
-                </iframe>
-            </div>
-            <div class="foco-dica">🪑 Dica 3: Sente-se de um jeito confortável.</div>
-        </div>
-
-        <div class="video-item">
-            <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/C-Z1Wc5FBMY?si=tYh19QTuux6OWPdA" 
-                        title="YouTube video player" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                        allowfullscreen>
-                </iframe>
-            </div>
-            <div class="foco-dica">🚫 Dica 4: Guarde outros brinquedos agora.</div>
-        </div>
-
-        <div class="video-item">
-            <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/KAh9JQQkNm0?si=BLWa7VUKVc-GS4zH" 
-                        title="YouTube video player" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                        allowfullscreen>
-                </iframe>
-            </div>
-            <div class="foco-dica">💧 Dica 5: Beba um gole de água após o vídeo!</div>
-        </div>
-
-    </div>
-</section>
         <section id="desafio" class="card">
             <h2>Missão do Conhecimento 🏆</h2>
             <div id="jogo-container">
@@ -245,10 +195,6 @@
         </section>
     </main>
 
-    <footer>
-        &copy; 2026 FocoKids | Pela Educação de Qualidade (ODS 4)
-    </footer>
-
     <script>
         function mudarAba(id) {
             document.querySelectorAll('.card').forEach(c => c.classList.remove('show'));
@@ -259,52 +205,39 @@
         }
 
         const desafios = [
-            {
-                pergunta: "1. A ODS 4 diz que a educação deve ser...",
-                opcoes: [{t:"Para todos!", c:true}, {t:"Só para adultos", c:false}]
-            },
-            {
-                pergunta: "2. O que ajuda uma criança com TDAH a aprender?",
-                opcoes: [{t:"Vídeos curtos e divertidos", c:true}, {t:"Textos gigantes e chatos", c:false}]
-            },
-            {
-                pergunta: "3. Onde podemos aprender coisas novas?",
-                opcoes: [{t:"Em qualquer lugar!", c:true}, {t:"Só dentro da sala", c:false}]
-            },
-            {
-                pergunta: "4. Estudar é como uma...",
-                opcoes: [{t:"Grande aventura!", c:true}, {t:"Perda de tempo", c:false}]
-            }
+            { p: "1. A ODS 4 diz que a educação deve ser...", o: [{t:"Para todos!", c:true}, {t:"Só para adultos", c:false}] },
+            { p: "2. O que ajuda no foco?", o: [{t:"Um lugar calmo", c:true}, {t:"Muita bagunça", c:false}] },
+            { p: "3. Aprender coisas novas é...", o: [{t:"Uma aventura!", c:true}, {t:"Perda de tempo", c:false}] },
+            { p: "4. Onde podemos aprender?", o: [{t:"Em qualquer lugar!", c:true}, {t:"Só na Lua", c:false}] }
         ];
 
         let atual = 0;
 
         function carregarPergunta() {
             if (atual >= desafios.length) {
-                document.getElementById('jogo-container').innerHTML = "<h2>🎉 VOCÊ É UM MESTRE! 🎉</h2><p>Completou todas as missões!</p>";
+                document.getElementById('jogo-container').innerHTML = "<h2>🎉 VOCÊ VENCEU! 🎉</h2>";
                 document.getElementById('btn-proximo').style.display = "none";
                 return;
             }
-            const p = desafios[atual];
-            document.getElementById('pergunta-texto').innerText = p.pergunta;
+            const d = desafios[atual];
+            document.getElementById('pergunta-texto').innerText = d.p;
             const container = document.getElementById('opcoes-botoes');
             container.innerHTML = "";
             document.getElementById('msg').innerText = "";
             document.getElementById('btn-proximo').style.display = "none";
 
-            p.opcoes.forEach(o => {
+            d.o.forEach(opcao => {
                 const b = document.createElement('button');
-                b.innerText = o.t;
-                b.className = "btn-game " + (o.c ? "" : "btn-wrong");
+                b.innerText = opcao.t;
+                b.className = "btn-game " + (opcao.c ? "" : "btn-wrong");
                 b.onclick = () => {
-                    const m = document.getElementById('msg');
-                    if(o.c) {
-                        m.innerText = "🌟 Sensacional!";
-                        m.style.color = "var(--secondary)";
+                    if(opcao.c) {
+                        document.getElementById('msg').innerText = "🌟 Acertou!";
+                        document.getElementById('msg').style.color = "var(--secondary)";
                         document.getElementById('btn-proximo').style.display = "block";
                     } else {
-                        m.innerText = "Tente mais uma vez! 💪";
-                        m.style.color = "var(--danger)";
+                        document.getElementById('msg').innerText = "Tente de novo! 💪";
+                        document.getElementById('msg').style.color = "var(--danger)";
                     }
                 };
                 container.appendChild(b);
@@ -315,3 +248,4 @@
     </script>
 </body>
 </html>
+            
